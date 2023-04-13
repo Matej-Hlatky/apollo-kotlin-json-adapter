@@ -1,0 +1,16 @@
+query PaymentMethods(
+  $channel: AdyenChannelEnum!,
+  $countryCode: String!,
+  $amount: Int!
+) {
+  adyen {
+    paymentMethods(input: {
+      countryCode: $countryCode,
+      channel: $channel,
+      amount: {
+        value: $amount,
+        currency: "EUR"
+      }
+    })
+  }
+}

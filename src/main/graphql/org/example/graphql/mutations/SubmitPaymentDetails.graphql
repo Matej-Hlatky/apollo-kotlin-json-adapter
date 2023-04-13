@@ -1,0 +1,13 @@
+mutation SubmitPaymentDetails(
+  $paymentId: String!,
+  $request: Json!
+) {
+  adyen {
+    submitDetails(
+      paymentId: $paymentId,
+      request: $request
+    ) {
+      ...adyenPaymentResponseFragment
+    }
+  }
+}

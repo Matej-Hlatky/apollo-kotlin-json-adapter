@@ -1,0 +1,13 @@
+fragment adyenPaymentResponseFragment on AdyenPaymentResponse {
+  paymentId
+  rawResponse
+
+  resultCode
+  captureResult
+
+  redirect {
+    data
+    httpMethod
+    url
+  }
+}
